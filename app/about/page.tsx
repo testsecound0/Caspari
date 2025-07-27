@@ -35,19 +35,19 @@ export default function AboutPage() {
       name: 'Chef Marco Rossi',
       role: 'Head Chef',
       bio: 'Born in Naples, Chef Marco brings 25 years of authentic Italian culinary expertise to Caspari.',
-      image: 'https://via.placeholder.com/400x400/FF6B6B/FFFFFF?text=Chef+Marco',
+      image: 'https://picsum.photos/400/400?random=301',
     },
     {
       name: 'Sofia Bianchi',
       role: 'Sous Chef',
       bio: 'Specializing in traditional pasta dishes and regional Italian specialties.',
-      image: 'https://via.placeholder.com/400x400/4ECDC4/FFFFFF?text=Sofia',
+      image: 'https://picsum.photos/400/400?random=302',
     },
     {
       name: 'Antonio Romano',
       role: 'Pastry Chef',
       bio: 'Creating authentic Italian desserts and pastries with recipes passed down through generations.',
-      image: 'https://via.placeholder.com/400x400/45B7D1/FFFFFF?text=Antonio',
+      image: 'https://picsum.photos/400/400?random=303',
     },
   ]
 
@@ -133,7 +133,7 @@ export default function AboutPage() {
               >
                 <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-warm">
                   <Image
-                    src="https://via.placeholder.com/600x500/FF6B6B/FFFFFF?text=Restaurant+Interior"
+                    src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Caspari Restaurant Interior"
                     fill
                     className="object-cover"

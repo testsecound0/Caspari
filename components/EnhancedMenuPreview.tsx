@@ -12,7 +12,7 @@ const specialItems = [
     name: 'Spaghetti alla Carbonara',
     description: 'Classic Roman pasta with guanciale, eggs, pecorino Romano, and black pepper',
     price: 18.95,
-    image: 'https://via.placeholder.com/400x300/96CEB4/FFFFFF?text=Carbonara',
+    image: 'https://images.pexels.com/photos/4518844/pexels-photo-4518844.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Pasta',
     isSpecial: true,
     allergens: ['Gluten', 'Eggs']
@@ -22,7 +22,7 @@ const specialItems = [
     name: 'Pizza Margherita',
     description: 'Traditional Neapolitan pizza with San Marzano tomatoes, fresh mozzarella, and basil',
     price: 16.95,
-    image: 'https://via.placeholder.com/400x300/FF6B6B/FFFFFF?text=Pizza',
+    image: 'https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Pizza',
     isSpecial: true,
     allergens: ['Gluten', 'Dairy']
@@ -32,7 +32,7 @@ const specialItems = [
     name: 'Osso Buco alla Milanese',
     description: 'Braised veal shanks with vegetables, white wine, and saffron risotto',
     price: 32.95,
-    image: 'https://via.placeholder.com/400x300/4ECDC4/FFFFFF?text=Osso+Buco',
+    image: 'https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Main Course',
     isSpecial: true,
     allergens: ['Dairy']
@@ -42,7 +42,7 @@ const specialItems = [
     name: 'Tiramisù',
     description: 'Classic Italian dessert with mascarpone, ladyfingers, espresso, and cocoa',
     price: 8.95,
-    image: 'https://via.placeholder.com/400x300/45B7D1/FFFFFF?text=Tiramisu',
+    image: 'https://images.pexels.com/photos/6880219/pexels-photo-6880219.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Dessert',
     isSpecial: true,
     allergens: ['Gluten', 'Dairy', 'Eggs']
@@ -52,7 +52,7 @@ const specialItems = [
     name: 'Bruschetta Classica',
     description: 'Toasted artisan bread topped with fresh Roma tomatoes, basil, and extra virgin olive oil',
     price: 8.95,
-    image: 'https://via.placeholder.com/400x300/FF6B6B/FFFFFF?text=Bruschetta',
+    image: 'https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Starter',
     isSpecial: false,
     allergens: ['Gluten']
@@ -62,7 +62,7 @@ const specialItems = [
     name: 'Linguine alle Vongole',
     description: 'Linguine with fresh clams, white wine, garlic, parsley, and a touch of chili',
     price: 22.95,
-    image: 'https://via.placeholder.com/400x300/DDA0DD/FFFFFF?text=Linguine',
+    image: 'https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Pasta',
     isSpecial: false,
     allergens: ['Gluten', 'Shellfish']

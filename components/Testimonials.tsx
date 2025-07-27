@@ -13,7 +13,7 @@ export function Testimonials() {
       role: 'Food Critic',
       content: 'The most authentic Italian experience I\'ve had outside of Italy. The pasta is perfectly al dente and the sauces are divine!',
       rating: 5,
-      image: 'https://via.placeholder.com/100x100/FF6B6B/FFFFFF?text=MR',
+      image: 'https://picsum.photos/100/100?random=201',
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export function Testimonials() {
       role: 'Regular Customer',
       content: 'I come here every week for the Osso Buco. It reminds me of my grandmother\'s cooking in Sicily.',
       rating: 5,
-      image: 'https://via.placeholder.com/100x100/4ECDC4/FFFFFF?text=GB',
+      image: 'https://picsum.photos/100/100?random=202',
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ export function Testimonials() {
       role: 'Food Blogger',
       content: 'The atmosphere is incredible and the wine selection is outstanding. Perfect for date nights!',
       rating: 5,
-      image: 'https://via.placeholder.com/100x100/45B7D1/FFFFFF?text=SM',
+      image: 'https://picsum.photos/100/100?random=203',
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ export function Testimonials() {
       role: 'Chef',
       content: 'As a chef myself, I appreciate the attention to detail and authentic techniques used here.',
       rating: 5,
-      image: 'https://via.placeholder.com/100x100/96CEB4/FFFFFF?text=MR',
+      image: 'https://picsum.photos/100/100?random=204',
     },
   ]
 
