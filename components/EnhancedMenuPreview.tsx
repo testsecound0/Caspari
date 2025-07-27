@@ -9,20 +9,20 @@ import Image from 'next/image'
 const specialItems = [
   {
     id: 1,
-    name: 'Spaghetti Carbonara',
-    description: 'Classic Roman pasta with pancetta, eggs, Pecorino Romano, and fresh black pepper',
+    name: 'Spaghetti alla Carbonara',
+    description: 'Classic Roman pasta with guanciale, eggs, pecorino Romano, and black pepper',
     price: 18.95,
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=500',
+    image: 'https://via.placeholder.com/400x300/96CEB4/FFFFFF?text=Carbonara',
     category: 'Pasta',
     isSpecial: true,
-    allergens: ['Gluten', 'Dairy', 'Eggs']
+    allergens: ['Gluten', 'Eggs']
   },
   {
     id: 2,
     name: 'Pizza Margherita',
     description: 'Traditional Neapolitan pizza with San Marzano tomatoes, fresh mozzarella, and basil',
     price: 16.95,
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500',
+    image: 'https://via.placeholder.com/400x300/FF6B6B/FFFFFF?text=Pizza',
     category: 'Pizza',
     isSpecial: true,
     allergens: ['Gluten', 'Dairy']
@@ -32,17 +32,17 @@ const specialItems = [
     name: 'Osso Buco alla Milanese',
     description: 'Braised veal shanks with vegetables, white wine, and saffron risotto',
     price: 32.95,
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500',
+    image: 'https://via.placeholder.com/400x300/4ECDC4/FFFFFF?text=Osso+Buco',
     category: 'Main Course',
     isSpecial: true,
     allergens: ['Dairy']
   },
   {
     id: 4,
-    name: 'Tiramisu',
+    name: 'Tiramisù',
     description: 'Classic Italian dessert with mascarpone, ladyfingers, espresso, and cocoa',
     price: 8.95,
-    image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500',
+    image: 'https://via.placeholder.com/400x300/45B7D1/FFFFFF?text=Tiramisu',
     category: 'Dessert',
     isSpecial: true,
     allergens: ['Gluten', 'Dairy', 'Eggs']
@@ -52,7 +52,7 @@ const specialItems = [
     name: 'Bruschetta Classica',
     description: 'Toasted artisan bread topped with fresh Roma tomatoes, basil, and extra virgin olive oil',
     price: 8.95,
-    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73?w=500',
+    image: 'https://via.placeholder.com/400x300/FF6B6B/FFFFFF?text=Bruschetta',
     category: 'Starter',
     isSpecial: false,
     allergens: ['Gluten']
@@ -62,7 +62,7 @@ const specialItems = [
     name: 'Linguine alle Vongole',
     description: 'Linguine with fresh clams, white wine, garlic, parsley, and a touch of chili',
     price: 22.95,
-    image: 'https://images.unsplash.com/photo-1597714026720-8f74c62310ba?w=500',
+    image: 'https://via.placeholder.com/400x300/DDA0DD/FFFFFF?text=Linguine',
     category: 'Pasta',
     isSpecial: false,
     allergens: ['Gluten', 'Shellfish']

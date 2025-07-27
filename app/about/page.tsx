@@ -30,25 +30,25 @@ export default function AboutPage() {
     }
   ]
 
-  const team = [
+  const teamMembers = [
     {
-      name: 'Giuseppe Caspari',
-      role: 'Executive Chef & Owner',
-      image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400',
-      description: 'With 25 years of culinary experience, Giuseppe brings authentic Tuscan flavors to every dish.'
+      name: 'Chef Marco Rossi',
+      role: 'Head Chef',
+      bio: 'Born in Naples, Chef Marco brings 25 years of authentic Italian culinary expertise to Caspari.',
+      image: 'https://via.placeholder.com/400x400/FF6B6B/FFFFFF?text=Chef+Marco',
     },
     {
-      name: 'Maria Caspari',
-      role: 'Pastry Chef',
-      image: 'https://images.unsplash.com/photo-1594736797933-d0201ba8e5c8?w=400',
-      description: 'Maria creates our handmade desserts using traditional Italian techniques and seasonal ingredients.'
-    },
-    {
-      name: 'Antonio Rossi',
+      name: 'Sofia Bianchi',
       role: 'Sous Chef',
-      image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400',
-      description: 'Antonio specializes in fresh pasta and seafood, bringing innovation to classic Italian dishes.'
-    }
+      bio: 'Specializing in traditional pasta dishes and regional Italian specialties.',
+      image: 'https://via.placeholder.com/400x400/4ECDC4/FFFFFF?text=Sofia',
+    },
+    {
+      name: 'Antonio Romano',
+      role: 'Pastry Chef',
+      bio: 'Creating authentic Italian desserts and pastries with recipes passed down through generations.',
+      image: 'https://via.placeholder.com/400x400/45B7D1/FFFFFF?text=Antonio',
+    },
   ]
 
   return (
@@ -133,7 +133,7 @@ export default function AboutPage() {
               >
                 <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-warm">
                   <Image
-                    src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600"
+                    src="https://via.placeholder.com/600x500/FF6B6B/FFFFFF?text=Restaurant+Interior"
                     alt="Caspari Restaurant Interior"
                     fill
                     className="object-cover"
@@ -218,7 +218,7 @@ export default function AboutPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {team.map((member, index) => (
+              {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function AboutPage() {
                       {member.name}
                     </h3>
                     <div className="text-italian-red font-semibold mb-4">{member.role}</div>
-                    <p className="text-gray-600 leading-relaxed">{member.description}</p>
+                    <p className="text-gray-600 leading-relaxed">{member.bio}</p>
                   </div>
                 </motion.div>
               ))}

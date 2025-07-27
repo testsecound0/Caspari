@@ -9,36 +9,36 @@ export function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Mitchell',
-      role: 'Local Food Critic',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=100',
+      name: 'Maria Rossi',
+      role: 'Food Critic',
+      content: 'The most authentic Italian experience I\'ve had outside of Italy. The pasta is perfectly al dente and the sauces are divine!',
       rating: 5,
-      text: 'The food at Caspari is absolutely divine! The authentic Italian flavors and cozy ambiance made our anniversary dinner truly special. The tiramisu was the best I\'ve ever had outside of Italy. We\'ll definitely be back!',
+      image: 'https://via.placeholder.com/100x100/FF6B6B/FFFFFF?text=MR',
     },
     {
       id: 2,
-      name: 'Marcus Thompson',
-      role: 'Business Executive',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100',
+      name: 'Giuseppe Bianchi',
+      role: 'Regular Customer',
+      content: 'I come here every week for the Osso Buco. It reminds me of my grandmother\'s cooking in Sicily.',
       rating: 5,
-      text: 'Outstanding service and exceptional cuisine! I\'ve been bringing clients here for months, and Caspari never disappoints. The wine selection is impressive, and the carbonara is perfection. Highly recommended for business dinners.',
+      image: 'https://via.placeholder.com/100x100/4ECDC4/FFFFFF?text=GB',
     },
     {
       id: 3,
-      name: 'Emily Rodriguez',
+      name: 'Sofia Martinez',
       role: 'Food Blogger',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100',
+      content: 'The atmosphere is incredible and the wine selection is outstanding. Perfect for date nights!',
       rating: 5,
-      text: 'Caspari Italian brings authentic Italian tradition to Englefield Green. Every dish tells a story, and you can taste the passion in every bite. The pizza margherita transported me straight to Naples. Simply magnificent!',
+      image: 'https://via.placeholder.com/100x100/45B7D1/FFFFFF?text=SM',
     },
     {
       id: 4,
-      name: 'James Wilson',
-      role: 'Local Resident',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100',
+      name: 'Marco Romano',
+      role: 'Chef',
+      content: 'As a chef myself, I appreciate the attention to detail and authentic techniques used here.',
       rating: 5,
-      text: 'A hidden gem in our neighborhood! The family atmosphere, friendly staff, and consistently delicious food make this our go-to restaurant. The kids love the bambini menu, and we adults can\'t get enough of the osso buco.',
-    }
+      image: 'https://via.placeholder.com/100x100/96CEB4/FFFFFF?text=MR',
+    },
   ]
 
   const nextTestimonial = () => {
@@ -105,7 +105,7 @@ export function Testimonials() {
 
             {/* Testimonial text */}
             <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-8 relative z-10">
-              "{testimonials[currentIndex].text}"
+              "{testimonials[currentIndex].content}"
             </blockquote>
 
             {/* Author info */}
