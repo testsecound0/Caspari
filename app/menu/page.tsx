@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
@@ -30,43 +30,164 @@ interface MenuItem {
   order: number
 }
 
+// Static data
+const DUMMY_CATEGORIES: Category[] = [
+  {
+    _id: 'antipasti',
+    name: 'Antipasti',
+    slug: 'antipasti',
+    description: 'Traditional Italian starters to awaken your appetite',
+    order: 1
+  },
+  {
+    _id: 'primi',
+    name: 'Primi Piatti',
+    slug: 'primi',
+    description: 'First courses featuring pasta, risotto, and traditional Italian dishes',
+    order: 2
+  },
+  {
+    _id: 'secondi',
+    name: 'Secondi Piatti',
+    slug: 'secondi',
+    description: 'Main courses with meat, fish, and poultry prepared with authentic Italian techniques',
+    order: 3
+  },
+  {
+    _id: 'contorni',
+    name: 'Contorni',
+    slug: 'contorni',
+    description: 'Side dishes and vegetables to complement your main course',
+    order: 4
+  },
+  {
+    _id: 'dolci',
+    name: 'Dolci',
+    slug: 'dolci',
+    description: 'Traditional Italian desserts and sweet endings',
+    order: 5
+  }
+]
+
+const DUMMY_MENU_ITEMS: MenuItem[] = [
+  {
+    _id: '1',
+    name: 'Bruschetta al Pomodoro',
+    description: 'Toasted bread topped with fresh tomatoes, basil, garlic, and extra virgin olive oil',
+    price: 8.50,
+    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73',
+    category: 'antipasti',
+    isVegetarian: true,
+    isVegan: true,
+    isGlutenFree: false,
+    isSpicy: false,
+    allergens: ['Gluten'],
+    order: 1
+  },
+  {
+    _id: '2',
+    name: 'Carpaccio di Manzo',
+    description: 'Thinly sliced raw beef with arugula, parmesan cheese, and truffle oil',
+    price: 16.00,
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b',
+    category: 'antipasti',
+    isVegetarian: false,
+    isVegan: false,
+    isGlutenFree: true,
+    isSpicy: false,
+    order: 2
+  },
+  {
+    _id: '3',
+    name: 'Spaghetti alla Carbonara',
+    description: 'Classic Roman pasta with eggs, pecorino cheese, guanciale, and black pepper',
+    price: 14.50,
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5',
+    category: 'primi',
+    isVegetarian: false,
+    isVegan: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    allergens: ['Gluten', 'Eggs'],
+    order: 3
+  },
+  {
+    _id: '4',
+    name: 'Risotto ai Funghi',
+    description: 'Creamy risotto with wild mushrooms, parmesan cheese, and white wine',
+    price: 15.00,
+    image: 'https://images.unsplash.com/photo-1608897013039-8f74c62310ba',
+    category: 'primi',
+    isVegetarian: true,
+    isVegan: false,
+    isGlutenFree: true,
+    isSpicy: false,
+    allergens: ['Dairy'],
+    order: 4
+  },
+  {
+    _id: '5',
+    name: 'Saltimbocca alla Romana',
+    description: 'Veal cutlets wrapped with prosciutto and sage, cooked in white wine',
+    price: 22.00,
+    image: 'https://images.unsplash.com/photo-1599667560877-fb71501b5b3b',
+    category: 'secondi',
+    isVegetarian: false,
+    isVegan: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    allergens: ['Gluten', 'Dairy'],
+    order: 5
+  },
+  {
+    _id: '6',
+    name: 'Branzino al Forno',
+    description: 'Whole sea bass baked with herbs, lemon, and extra virgin olive oil',
+    price: 24.00,
+    image: 'https://images.unsplash.com/photo-1598511757337-fe2cafc31ba1',
+    category: 'secondi',
+    isVegetarian: false,
+    isVegan: false,
+    isGlutenFree: true,
+    isSpicy: false,
+    order: 6
+  },
+  {
+    _id: '7',
+    name: 'Patate Arrosto',
+    description: 'Roasted potatoes with rosemary, garlic, and sea salt',
+    price: 6.50,
+    image: 'https://images.unsplash.com/photo-1544824924-594073461666',
+    category: 'contorni',
+    isVegetarian: true,
+    isVegan: true,
+    isGlutenFree: true,
+    isSpicy: false,
+    order: 7
+  },
+  {
+    _id: '8',
+    name: 'Tiramisù',
+    description: 'Classic Italian dessert with mascarpone cream, coffee-soaked ladyfingers, and cocoa',
+    price: 9.00,
+    image: 'https://images.unsplash.com/photo-1572441713132-51c75654db73',
+    category: 'dolci',
+    isVegetarian: true,
+    isVegan: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    allergens: ['Gluten', 'Eggs', 'Dairy'],
+    order: 8
+  }
+]
+
 export default function MenuPage() {
-  const [categories, setCategories] = useState<Category[]>([])
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
-  const [loading, setLoading] = useState(true)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = async () => {
-    try {
-      const [categoriesRes, itemsRes] = await Promise.all([
-        fetch('/api/categories'),
-        fetch('/api/menu-items')
-      ])
-
-      if (categoriesRes.ok) {
-        const categoriesData = await categoriesRes.json()
-        setCategories(categoriesData)
-      }
-
-      if (itemsRes.ok) {
-        const itemsData = await itemsRes.json()
-        setMenuItems(itemsData)
-      }
-    } catch (error) {
-      console.error('Error fetching menu data:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
   const filteredItems = selectedCategory === 'all' 
-    ? menuItems 
-    : menuItems.filter(item => item.category === selectedCategory)
+    ? DUMMY_MENU_ITEMS 
+    : DUMMY_MENU_ITEMS.filter(item => item.category === selectedCategory)
 
   const getDietaryIcons = (item: MenuItem) => {
     const icons = []
@@ -75,18 +196,6 @@ export default function MenuPage() {
     if (item.isGlutenFree) icons.push({ icon: <Wheat className="w-4 h-4 text-amber-600" />, label: 'Gluten Free' })
     if (item.isSpicy) icons.push({ icon: <Flame className="w-4 h-4 text-red-600" />, label: 'Spicy' })
     return icons
-  }
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-italian-cream to-white flex items-center justify-center">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-16 h-16 border-4 border-italian-red border-t-transparent rounded-full"
-        />
-      </div>
-    )
   }
 
   return (
@@ -134,7 +243,7 @@ export default function MenuPage() {
                 >
                   All Specialties
                 </motion.button>
-                {categories.map((category) => (
+                {DUMMY_CATEGORIES.map((category) => (
                   <motion.button
                     key={category._id}
                     whileHover={{ scale: 1.05 }}
@@ -157,8 +266,8 @@ export default function MenuPage() {
         {/* Menu Items */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            {categories.map((category) => {
-              const categoryItems = menuItems.filter(item => item.category === category._id)
+            {DUMMY_CATEGORIES.map((category) => {
+              const categoryItems = DUMMY_MENU_ITEMS.filter(item => item.category === category._id)
               
               if (selectedCategory !== 'all' && selectedCategory !== category._id) {
                 return null
